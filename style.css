@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: rebeccapurple;
+    width: 100wh;
+}
+
+#mainContent {
+    align-items: center;
+    padding: 20px;
+}
+
+#searchBar {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+#bookQuery {
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 2rem;
+    color: white;
+    font-family: 'Silkscreen', cursive;
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+}
+
+#bookSelector {
+    margin: 2rem 5rem;
+    padding: 3rem;
+}
+
+.book {
+    align-items: center;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    display: flex;
+    padding: 2rem;
+}
+
+.bookInfo {
+    margin-right: 3rem;
+}
+
+.saveBook {
+    background-color: rebeccapurple;
+    border-radius: 10%;
+    color: white;
+    cursor: pointer;
+    font-size: 3rem;
+    padding: 0.3rem 0.7rem;
+}

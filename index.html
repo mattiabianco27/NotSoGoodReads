@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BookIn</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <div id="mainContent">
+        <form id="searchBar">
+            <input type="text" name="bookTitle" id="bookQuery" placeholder="Search">
+            <input type="submit" value="submit">
+        </form>
+
+        <div id="bookSelector">
+            <div class="book">
+                <div class="bookInfo">
+                    <p>Titolo</p>
+                    <img src="http://books.google.com/books/content?id=uDV7RAAACAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api">
+                    <p>Autore</p>
+                </div>
+                <form class="selectBook">
+                    <input type="button" value="+" class="saveBook"/>
+                </form>
+            </div>
+        </div>
+
+        <div id="bookDisplay">
+            <!-- ... -->
+        </div>
+    </div>
+
+    <script src="scripts/books.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
