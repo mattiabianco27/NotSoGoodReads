@@ -4,34 +4,35 @@
     <meta charset="UTF-8">
     <title>BookIn</title>
 
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
 </head>
 <body>
-    <div id="mainContent">
-        <form id="searchBar">
-            <input type="text" name="bookTitle" id="bookQuery" placeholder="Search">
-            <input type="submit" value="submit">
-        </form>
-
-        <div id="bookSelector">
-            <div class="book">
-                <div class="bookInfo">
-                    <p>Titolo</p>
-                    <img src="http://books.google.com/books/content?id=uDV7RAAACAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api">
-                    <p>Autore</p>
-                </div>
-                <form class="selectBook">
-                    <input type="button" value="+" class="saveBook"/>
-                </form>
-            </div>
+    <div id="header">
+        <div id="icon">
+            <img src="../imgs/book.svg" />
         </div>
-
-        <div id="bookDisplay">
-            <!-- ... -->
+        <div id="navbar">
+            <ul>
+                <li>
+                    <a href="../home/index.html">Home</a>
+                </li>
+                <li>
+                    <a href="../search/search.html">Search</a>
+                </li>
+                <li>
+                    <a href="../search/search.html">Your books</a>
+                </li>
+                <li>
+                    <a href="../search/search.html">Login</a>
+                </li>
+            </ul>
         </div>
     </div>
+    <hr style="width: 90%;margin:0 auto;"/>
 
-    <script src="scripts/books.js"></script>
-    <script src="scripts/app.js"></script>
+    <div id="footer">
+        <p>Project realized by Elz</p>
+    </div>
+
 </body>
 </html>
