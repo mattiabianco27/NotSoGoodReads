@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BookIn</title>
+
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="stylesheet" type="text/css" href="./searchStyle.css" />
+</head>
+<body>
+    <div id="header">
+        <div id="icon">
+            <img src="../imgs/book.svg" />
+        </div>
+        <div id="navbar">
+            <ul>
+                <li>
+                    <a href="../home/index.html">Home</a>
+                </li>
+                <li>
+                    <a href="../search/search.html">Search</a>
+                </li>
+                <li>
+                    <a href="../search/search.html">Your books</a>
+                </li>
+                <li>
+                    <a href="../search/search.html">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="mainContainer">
+        <form id="searchBar">
+            <input type="text" name="bookTitle" id="bookQuery" placeholder="">
+            <input type="submit" value="submit">
+        </form>
+
+        <div id="carouselFrame">
+            <div id="bookSelector">
+                <div class="book">
+                    <img src="http://books.google.com/books/content?id=uDV7RAAACAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api">
+                    <div class="bookInfo">
+                        <p>Titolo</p>
+                        <p>Autore</p>
+                    </div>
+                    <button type="button" class="selectBook">+</button>
+                </div>
+                <div class="book">
+                    <img src="http://books.google.com/books/content?id=uDV7RAAACAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api">
+                    <div class="bookInfo">
+                        <p>Titolo</p>
+                        <p>Autore</p>
+                    </div>
+                    <button type="button" class="selectBook">+</button>
+                </div>
+                <div class="book">
+                    <img src="http://books.google.com/books/content?id=uDV7RAAACAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;source=gbs_api">
+                    <div class="bookInfo">
+                        <p>Titolo</p>
+                        <p>Autore</p>
+                    </div>
+                    <button type="button" class="selectBook">+</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="footer">
+        <p>Project realized by Elz</p>
+    </div>
+
+    <script src="../scripts/books.js"></script>
+    <script src="../scripts/app.js"></script>
+</body>
+</html>
