@@ -10,48 +10,46 @@ body {
     width: 100wh;
 }
 
-#mainContent {
+#header {
     align-items: center;
-    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 5%;
 }
 
-#searchBar {
-    margin: 0 auto;
+#header img {
+    width: 75px;
+}
+
+#navbar ul {
+    display: flex;
+    list-style-type: none;
+}
+
+#navbar li {
+    height: fit-content;
+    margin: 0rem 1rem;
     width: fit-content;
 }
 
-#bookQuery {
-    background-color: black;
-    border: 2px solid white;
-    border-radius: 2rem;
+#navbar a {
     color: white;
-    font-family: 'Silkscreen', cursive;
-    font-size: 1.5rem;
-    padding: 1rem 3rem;
+    padding: 1rem 0.5rem;
+    text-decoration: none;
+    width: 100%;
 }
 
-#bookSelector {
-    margin: 2rem 5rem;
-    padding: 3rem;
-}
-
-.book {
-    align-items: center;
-    background-color: antiquewhite;
+#navbar a:hover {
+    background-color: white;
     border-radius: 10px;
-    display: flex;
-    padding: 2rem;
+    color: rebeccapurple;
+    transition: 0.35s;
 }
 
-.bookInfo {
-    margin-right: 3rem;
-}
-
-.saveBook {
-    background-color: rebeccapurple;
-    border-radius: 10%;
+#footer {
+    background-color: black;
     color: white;
-    cursor: pointer;
-    font-size: 3rem;
-    padding: 0.3rem 0.7rem;
+    padding: 3rem;
+    text-align: center;
 }
