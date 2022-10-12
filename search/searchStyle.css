@@ -52,3 +52,32 @@
     font-size: 3rem;
     padding: 0 0.7rem;
 }
+
+#notificationContainer {
+    align-items: center;
+    background-color: rebeccapurple;
+    border-radius: 10px;
+    bottom: 0;
+    color: white;
+    display: none;
+    padding: 2.5rem;
+    position: fixed;
+    right: 0;
+}
+
+#notificationContainer button {
+    background-color: white;
+    border: none;
+    border-radius: 10px 0 0;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.2rem;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#notification {
+    position: relative;
+    width: 400px;
+}

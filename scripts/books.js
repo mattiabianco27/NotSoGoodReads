@@ -1,4 +1,5 @@
- const select = document.querySelector('#bookSelector');
+const select = document.querySelector('#bookSelector');
+const popupNotification = document.querySelector('#notificationContainer');
 
 async function getBook(bookTitle) {
     const data = await requestBook(bookTitle);
@@ -17,7 +18,13 @@ async function requestBook(bookTitle) {
 
 function addBook(bookElement) {
     const title = bookElement.previousElementSibling.childNodes[1].innerText;
-    console.log(`Trying to add "${title}" to your books. This functionality will soon be available.`);
+    popupNotification.querySelector('#notification').innerHTML = `<p>Il libro "${title}" è stato correttamente aggiunto alla tua raccolta</p>`;
+    popupNotification.style.display = 'block';
+    setTimeout(removePopup, 3000);
+}
+
+function removePopup() {
+    popupNotification.style.display = 'none';
 }
 
 function displayResults(bookData) {
