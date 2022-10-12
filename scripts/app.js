@@ -4,8 +4,8 @@ const display = document.querySelector('#bookDisplay');
 
 const holder = {
     text: [
-        "Search your book here",
         "What are you waiting for?",
+        "Search by title",
     ],
     tIndex: 0,
     cIndex: 0
@@ -33,11 +33,11 @@ const interval = setInterval(async () => {
         clearInterval(interval);
     
     if (holder.cIndex === holder.text[holder.tIndex].length) {    
-        await sleep(2000);
+        await sleep(1000);
         holder.tIndex = (holder.tIndex + 1)%holder.text.length;
         holder.cIndex = 0;
     }
-}, 70);
+}, 50);
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));

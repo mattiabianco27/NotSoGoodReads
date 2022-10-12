@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Silkscreen&display=swap');
 
 * {
     margin: 0px;
@@ -35,6 +35,7 @@ body {
 
 #navbar a {
     color: white;
+    font-family: 'Libre Baskerville', serif;
     padding: 1rem 0.5rem;
     text-decoration: none;
     width: 100%;
