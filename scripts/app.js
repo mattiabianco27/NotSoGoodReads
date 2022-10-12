@@ -11,7 +11,6 @@ const holder = {
     cIndex: 0
 };
 
-
 form.addEventListener('submit', e => {
     e.preventDefault();
     getBook(e.target.bookTitle.value);
@@ -20,7 +19,7 @@ form.addEventListener('submit', e => {
 
 select.addEventListener('click', e => {
     if (e.target.classList.contains('selectBook')) {
-        addBook(e.target);
+        addBook(e.target.parentElement.parentElement);
     }
 });
 
@@ -41,4 +40,19 @@ const interval = setInterval(async () => {
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function move(direction=1) {
+    const bookContainer = document.querySelector("#bookSlider");
+    const books = document.getElementsByClassName("bookContainer");
+    const distance = books[1].getBoundingClientRect().left - books[0].getBoundingClientRect().left;
+
+    index += direction;
+    if (index < 0) {
+        index = books.length - 1;
+    } else if (index > books.length - 1) {
+        index = 0;
+    }
+
+    bookContainer.style.transform = `translate(${-index * distance}px)`;
 }

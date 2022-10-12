@@ -6,7 +6,7 @@
 
 #searchBar {
     align-items: center;
-    margin: 0 auto;
+    margin: 2rem auto 1rem;
     width: fit-content;
 }
 
@@ -16,7 +16,7 @@
     border-radius: 10px;
     color: white;
     font-family: 'Libre Baskerville', serif;
-    font-size: 1.3arem;
+    font-size: 1rem;
     padding: 1rem;
 }
 
@@ -25,33 +25,92 @@
     border-radius: 2rem;
     color: white;
     font-family: 'Libre Baskerville', serif;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 1rem 3rem;
 }
 
-#carouselFrame {
-    width: 80%;
-    margin: auto;
-    overflow-x: scroll;
-}
-
-#bookSelector {
-    display: flex;
-    margin: 2rem 5rem;
-    padding: 3rem;
-}
-
-.book {
+#carousel {
     align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.arrow {
+    border: solid 1px white;
+    border-radius: 0.1rem;
+    margin: 0;
+    width: 5%;
+    max-width: 3rem;
+    min-width: 2rem;
+}
+
+.arrow:hover {
+    border: solid 1px rebeccapurple;
+    border-radius: 0.1rem;
+    cursor: pointer;
+}
+
+.arrow svg {
+    fill: rebeccapurple;
+    width: 100%;
+}
+
+#bookFrame {
+    /*box model*/
+    width: 85%;
+
+    border: solid 1px rebeccapurple;
+    border-radius: 10px;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+#bookSlider {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0);
+    width: fit-content;
+}
+
+.bookContainer {
+    align-items: center;
+    background-color: white;
     border: 1px solid rebeccapurple;
     border-radius: 10px;
+    padding: 3rem;
+    width: 300px;
+}
+
+.bookContainer img {
+    height: 250px;
+}
+
+.upperBookContainer {
+    align-items: center;
     display: flex;
-    gap: 1rem;
-    padding: 2rem;
+    justify-content: space-between;
+    margin-bottom: 2rem;
 }
 
 .bookInfo {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Libre Baskerville', serif;
+    gap: 1rem;
     margin-right: 3rem;
+    width: 100%;
+}
+
+.bookInfo h3 {
+    background-color: rebeccapurple;
+    color: white;
+    padding: 5px;
+    width: fit-content;
 }
 
 .selectBook {
@@ -60,6 +119,7 @@
     color: white;
     cursor: pointer;
     font-size: 3rem;
+    height: fit-content;
     padding: 0 0.7rem;
 }
 

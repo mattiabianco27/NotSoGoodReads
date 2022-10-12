@@ -1,5 +1,7 @@
-const select = document.querySelector('#bookSelector');
+const select = document.querySelector('#bookSlider');
 const popupNotification = document.querySelector('#notificationContainer');
+let index = 0;
+let timer;
 
 async function getBook(bookTitle) {
     const data = await requestBook(bookTitle);
@@ -16,11 +18,13 @@ async function requestBook(bookTitle) {
     return data;
 }
 
-function addBook(bookElement) {
-    const title = bookElement.previousElementSibling.childNodes[1].innerText;
+function addBook(bookContainer) {
+    const title = bookContainer.querySelector('.bookInfo').querySelector('p').innerText;
     popupNotification.querySelector('#notification').innerHTML = `<p>Il libro "${title}" è stato correttamente aggiunto alla tua raccolta</p>`;
     popupNotification.style.display = 'block';
-    setTimeout(removePopup, 3000);
+    
+    clearTimeout(timer);
+    timer = setTimeout(removePopup, 3000);
 }
 
 function removePopup() {
@@ -33,14 +37,18 @@ function displayResults(bookData) {
         const bookInfo = bookData.items[key].volumeInfo;
         const newDiv = document.createElement('div');
 
-        newDiv.classList.add('book');
+        newDiv.classList.add('bookContainer');
         newDiv.innerHTML = `
-            <img src="${bookInfo.imageLinks.thumbnail}">
-            <div class="bookInfo">
-                <p>${bookInfo.title}</p>
-                <p>${bookInfo.authors}</p>
+            <div class="upperBookContainer">
+                <img src="${bookInfo.imageLinks.thumbnail}">
+                <button type="button" class="selectBook">+</button>
             </div>
-            <button type="button" class="selectBook">+</button>
+            <div class="bookInfo">
+                <h3>Title</h3>
+                <p>${bookInfo.title}</p>
+                <h3>Authors</h3>
+                <p>${bookInfo.authors.join(', ')}</p>
+            </div>
         `;
 
         select.appendChild(newDiv);
