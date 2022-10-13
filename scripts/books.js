@@ -21,12 +21,12 @@ function addBook(bookContainer) {
     const info = bookContainer.querySelector('.bookInfo').querySelectorAll('p');
     const title = info[0].innerText;
     const authors = info[1].innerText;
+    const img = bookContainer.querySelector('.leftBookContainer').querySelector('img').src;
+
     const collectionDimension = localStorage.getItem('collectionDimension') ? Number(localStorage.getItem('collectionDimension')) : 0;
 
-    localStorage.setItem(`book${collectionDimension}`, JSON.stringify({title: title, authors: authors, numberOfPages: 0, progress: 0}));
+    localStorage.setItem(`book${collectionDimension}`, JSON.stringify({title: title, authors: authors, img: img, numberOfPages: 0, progress: 0}));
     localStorage.setItem('collectionDimension', collectionDimension+1);
-
-    console.log(localStorage.getItem('collectionDimension'));
 
     popupNotification.querySelector('#notification').innerHTML = `<p>Book "${title}" has been successfully added to your collection</p>`;
     popupNotification.style.display = 'block';
@@ -47,7 +47,7 @@ function displayResults(bookData) {
         newDiv.classList.add('bookContainer');
         newDiv.innerHTML = `
             <div class="leftBookContainer">
-            <img src="${bookInfo.imageLinks.thumbnail}">
+                <img src="${bookInfo.imageLinks.thumbnail}">
             </div>
             <div class="rightBookContainer">
                 <div class="bookInfo">
