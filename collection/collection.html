@@ -5,7 +5,7 @@
     <title>BookIn</title>
 
     <link rel="stylesheet" type="text/css" href="../style.css" />
-
+    <link rel="stylesheet" type="text/css" href="./collectionStyle.css" />
 </head>
 <body>
     <div id="header">
@@ -21,7 +21,7 @@
                     <a href="../search/search.html">Search</a>
                 </li>
                 <li>
-                    <a href="">Your books</a>
+                    <a href="">Your collection</a>
                 </li>
                 <li>
                     <a href="../login/login.html">Login</a>
@@ -30,12 +30,44 @@
         </div>
     </div>
 
-    <div style="padding: 5rem;">
-        <h1 style="text-align: center;">This page is not available yet</h1>
+    <div id="mainContainer">
+        <div id="bookSlider">
+            
+        </div>
     </div>
 
     <div id="footer">
         <p>Project realized by Elz</p>
     </div>
+
+    <script>
+        const collectionContainer = document.querySelector('#bookSlider');
+        const collectionDimension = localStorage.getItem('collectionDimension') ? Number(localStorage.getItem('collectionDimension')) : 0;
+
+        for (let i=0; i<collectionDimension; i++) {
+            const info = JSON.parse(localStorage.getItem(`book${i}`));
+
+            let node = document.createElement('div');
+            node.classList.add('bookContainer');
+
+            console.log(info.img);
+            node.innerHTML = `
+                <div class="leftBookContainer">
+                    <img src="${info.img}">
+                </div>
+                <div class="rightBookContainer">
+                    <div class="bookInfo">
+                        <h5>Title</h5>
+                        <p>${info.title}</p>
+                        <h5>Authors</h5>
+                        <p>${info.authors}</p>
+                    </div>
+                    <button type="button" class="removeBook">Remove from your collection</button>
+                </div>
+            `;
+
+            collectionContainer.appendChild(node);
+        }
+    </script>
 </body>
 </html>
