@@ -1,6 +1,5 @@
 const select = document.querySelector('#bookSlider');
 const popupNotification = document.querySelector('#notificationContainer');
-let index = 0;
 let timer;
 
 async function getBook(bookTitle) {
@@ -39,15 +38,17 @@ function displayResults(bookData) {
 
         newDiv.classList.add('bookContainer');
         newDiv.innerHTML = `
-            <div class="upperBookContainer">
-                <img src="${bookInfo.imageLinks.thumbnail}">
-                <button type="button" class="selectBook">+</button>
+            <div class="leftBookContainer">
+            <img src="${bookInfo.imageLinks.thumbnail}">
             </div>
-            <div class="bookInfo">
-                <h3>Title</h3>
-                <p>${bookInfo.title}</p>
-                <h3>Authors</h3>
-                <p>${bookInfo.authors.join(', ')}</p>
+            <div class="rightBookContainer">
+                <div class="bookInfo">
+                    <h5>Title</h5>
+                    <p>${bookInfo.title}</p>
+                    <h5>Authors</h5>
+                    <p>${bookInfo.authors.join(', ')}</p>
+                </div>
+                <button type="button" class="selectBook">Add to your collection</button>
             </div>
         `;
 

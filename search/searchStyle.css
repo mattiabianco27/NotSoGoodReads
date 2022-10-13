@@ -1,6 +1,7 @@
 #mainContainer {
-    background-color: white;
     align-items: center;
+    background-color: white;
+    font-family: 'Libre Baskerville', serif;
     padding: 20px;
 }
 
@@ -82,45 +83,61 @@
     background-color: white;
     border: 1px solid rebeccapurple;
     border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    gap: 2rem;
     padding: 3rem;
-    width: 300px;
 }
 
 .bookContainer img {
-    height: 250px;
+    height: 300px;
 }
 
-.upperBookContainer {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2rem;
+.rightBookContainer {
+    height: 100%;
 }
 
 .bookInfo {
     display: flex;
     flex-direction: column;
     font-family: 'Libre Baskerville', serif;
-    gap: 1rem;
     margin-right: 3rem;
-    width: 100%;
+    width: 300px;
 }
 
-.bookInfo h3 {
+.bookInfo h5 {
     background-color: rebeccapurple;
+    border-radius: 5px;
     color: white;
+    margin-bottom: 0.5rem;
     padding: 5px;
     width: fit-content;
 }
 
+.bookInfo p {
+    margin-bottom: 2rem;
+}
+
 .selectBook {
     background-color: rebeccapurple;
-    border-radius: 10%;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px #542881;
     color: white;
     cursor: pointer;
-    font-size: 3rem;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1rem;
     height: fit-content;
-    padding: 0 0.7rem;
+    padding: 1rem;
+    width: 300px;
+
+    position: absolute;
+    bottom: 3.5rem;
+}
+
+.selectBook:active {
+    transform: translateY(2px);
 }
 
 #notificationContainer {

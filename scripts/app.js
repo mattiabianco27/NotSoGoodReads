@@ -1,6 +1,8 @@
 const form = document.querySelector('#searchBar');
 const bookQuery = document.querySelector('#bookQuery');
 const display = document.querySelector('#bookDisplay');
+let carouselBookIndex = 0;
+let carouselPosition = 0;
 
 const holder = {
     text: [
@@ -45,14 +47,14 @@ function sleep(ms) {
 function move(direction=1) {
     const bookContainer = document.querySelector("#bookSlider");
     const books = document.getElementsByClassName("bookContainer");
-    const distance = books[1].getBoundingClientRect().left - books[0].getBoundingClientRect().left;
 
-    index += direction;
-    if (index < 0) {
-        index = books.length - 1;
-    } else if (index > books.length - 1) {
-        index = 0;
+    carouselBookIndex += direction;
+    if (carouselBookIndex < 0) {
+        carouselBookIndex = books.length - 1;
+    } else if (carouselBookIndex > books.length - 1) {
+        carouselBookIndex = 0;
     }
 
-    bookContainer.style.transform = `translate(${-index * distance}px)`;
+    console.log(books[carouselBookIndex].offsetLeft);
+    bookContainer.style.transform = `translate(${-books[carouselBookIndex].offsetLeft}px)`;
 }
