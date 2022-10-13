@@ -1,7 +1,6 @@
 const select = document.querySelector('#bookSlider');
 const popupNotification = document.querySelector('#notificationContainer');
 let timer;
-let collectionDimension = 0;
 
 async function getBook(bookTitle) {
     const data = await requestBook(bookTitle);
@@ -22,14 +21,17 @@ function addBook(bookContainer) {
     const info = bookContainer.querySelector('.bookInfo').querySelectorAll('p');
     const title = info[0].innerText;
     const authors = info[1].innerText;
+    const collectionDimension = localStorage.getItem('collectionDimension') ? Number(localStorage.getItem('collectionDimension')) : 0;
 
-    localStorage.setItem(`book${collectionDimension}`, JSON.stringify({title: title, authors: authors}));
-    collectionDimension++;
+    localStorage.setItem(`book${collectionDimension}`, JSON.stringify({title: title, authors: authors, numberOfPages: 0, progress: 0}));
+    localStorage.setItem('collectionDimension', collectionDimension+1);
+
+    console.log(localStorage.getItem('collectionDimension'));
 
     popupNotification.querySelector('#notification').innerHTML = `<p>Book "${title}" has been successfully added to your collection</p>`;
     popupNotification.style.display = 'block';
     clearTimeout(timer);
-    timer = setTimeout(removePopup, 3000);
+    timer = setTimeout(removePopup, 5000);
 }
 
 function removePopup() {
