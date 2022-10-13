@@ -19,7 +19,7 @@ async function requestBook(bookTitle) {
 
 function addBook(bookContainer) {
     const title = bookContainer.querySelector('.bookInfo').querySelector('p').innerText;
-    popupNotification.querySelector('#notification').innerHTML = `<p>Il libro "${title}" è stato correttamente aggiunto alla tua raccolta</p>`;
+    popupNotification.querySelector('#notification').innerHTML = `<p>Book "${title}" has been successfully added to your collection</p>`;
     popupNotification.style.display = 'block';
     
     clearTimeout(timer);
