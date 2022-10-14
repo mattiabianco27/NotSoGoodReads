@@ -1,0 +1,49 @@
+#mainContainer {
+    background-color: rgb(20, 20, 20);
+    padding: 3rem 0;
+}
+
+#mainContainer h1 {
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.introductorySection {
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 5rem 0;
+    width: 80%;
+}
+
+.introductorySection img {
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px #542881;
+    transform: rotateY(15deg) rotateX(-10deg);
+    transform-style: preserve-3d;
+    width: 60%;
+}
+
+.infoContainer {
+    margin-left: 4%;
+    width: 30%;
+}
+
+.infoContainer a {
+    color: rebeccapurple;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.infoContainer a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    color: white;
+    margin: 0 auto;
+    width: 70%;
+}
