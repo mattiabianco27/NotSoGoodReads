@@ -39,6 +39,9 @@ function removePopup() {
 }
 
 function displayResults(bookData) {
+    select.style.transform = `translate(0px)`;
+    carouselBookIndex = 0;
+    
     select.innerHTML = "";
     for (key in bookData.items) {
         const bookInfo = bookData.items[key].volumeInfo;
