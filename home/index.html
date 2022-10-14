@@ -31,7 +31,7 @@
     </div>
 
     <div id="mainContainer">
-        <h1>NotSoGoodReads</h1>
+        <h1>...</h1>
         
         <div class="introductorySection">
             <img src="../imgs/preview_search.png" />
@@ -62,5 +62,39 @@
     <div id="footer">
         <p>Project realized by Elz</p>
     </div>
+
+    <script>
+        const titleContainer = document.querySelector('h1');
+        const holder = {
+            text: 
+            [
+                "NotSoGoodReads",
+                "Not a great web page...",
+                "...to search for great books"
+            ],
+            tIndex: 0,
+            cIndex: 0
+        };
+
+        const interval = setInterval(async () => {
+            titleContainer.innerText = holder.text[holder.tIndex].slice(0,holder.cIndex+1);
+
+            holder.cIndex++;
+    
+            if (holder.cIndex === holder.text[holder.tIndex].length) {   
+                if (holder.tIndex === holder.text.length-1)
+                    await sleep(5000);
+                else
+                    await sleep(1000);
+                
+                holder.tIndex = (holder.tIndex + 1)%holder.text.length;
+                holder.cIndex = 0;
+            }
+        }, 70);
+
+        function sleep(ms) {
+           return new Promise(resolve => setTimeout(resolve, ms));
+        }
+    </script>
 </body>
 </html>
