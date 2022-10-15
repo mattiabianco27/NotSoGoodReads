@@ -14,24 +14,27 @@
 }
 
 .bookContainer {
-    align-items: center;
     background-color: white;
     border-radius: 10px;
     box-shadow: 5px 5px 5px 5px #542881;
+    padding: 3rem;
+    width: fit-content;
+}
+
+.upperBookContainer {
+    align-items: center;
     display: flex;
     flex-direction: row;
     flex-grow: 1;
     flex-wrap: wrap;
     gap: 2rem;
-    padding: 3rem;
-    width: fit-content;
 }
 
-.bookContainer img {
-    height: 300px;
+.upLeftBookContainer img {
+    width: 200px;
 }
 
-.rightBookContainer {
+.upRightBookContainer {
     height: 100%;
 }
 
@@ -56,7 +59,7 @@
     margin-bottom: 2rem;
 }
 
-.removeBook {
+button {
     background-color: rebeccapurple;
     border: none;
     border-radius: 5px;
@@ -67,12 +70,46 @@
     font-size: 1rem;
     height: fit-content;
     padding: 1rem;
-    width: 300px;
+}
 
-    position: relative;
+.removeBook {
     bottom: 0;
+    position: relative;
+    width: 300px;
 }
 
 .removeBook:active {
     transform: translateY(2px);
+}
+
+
+.lowerBookContainer {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 3rem;
+    width: 100%; 
+}
+
+.lowerBookContainer h5 {
+    margin-bottom: 1rem;
+}
+
+.lowerBookContainer textarea {
+    background: none;
+    border: none;
+    border-bottom: solid 1px black;
+    color: black;
+    height: fit-content;
+}
+
+.lowerBookContainer textarea {
+    background: none;
+    border: none;
+    border-bottom: solid 1px black;
+    color: black;
+    height: fit-content;
+    width: 140px;
 }
