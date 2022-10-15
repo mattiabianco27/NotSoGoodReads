@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Silkscreen&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 * {
     margin: 0px;
@@ -34,6 +35,7 @@ body {
 }
 
 #navbar a {
+    border-radius: 10px;
     color: white;
     font-family: 'Libre Baskerville', serif;
     padding: 1rem 0.5rem;
@@ -43,14 +45,36 @@ body {
 
 #navbar a:hover {
     background-color: white;
-    border-radius: 10px;
     color: rebeccapurple;
     transition: 0.35s;
 }
 
 #footer {
+    align-items: center;
     background-color: black;
     color: white;
-    padding: 3rem;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 15%;
+}
+
+#footerLeft {
+    border-bottom: solid 1px white;
+    padding: 1rem 0;
+    width: 55%;
+}
+
+#footerRight {
+    height: fit-content;
+    width: fit-content;
+}
+
+#footerRight i {
+    color: white;
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+#footerRight i:hover {
+    color: rebeccapurple;
 }
