@@ -36,7 +36,7 @@
         <div class="introductorySection">
             <img src="../imgs/preview_search.png" />
             <div class="infoContainer">
-                <p>The  <a href="../search/search.html">search</a> page allows you to search your favourite books and add them to your personal collection.</p>
+                <p>The  <a href="../search/search.html">search</a> page allows you to search for your favourite books and add them to your personal collection.</p>
             </div>
         </div>
         <hr />
@@ -52,15 +52,24 @@
         <div class="introductorySection">
             <img src="../imgs/preview_login.png" />
             <div class="infoContainer">
-                <p>The  <a href="../login/login.html">login/sing-up</a> page will allow you to register / enter you private area.</p>
+                <p>The  <a href="../login/login.html">login/sign-up</a> page will allow you to register / enter your private area.</p>
                 <br/>
-                <p>Sing-up and Login are not implemened yet.</p>
+                <p>Sign-up and Login are not available yet.</p>
             </div>
         </div>
     </div>
 
     <div id="footer">
-        <p>Project realized by Elz</p>
+        <div id="footerLeft">
+            <h3>ABOUT</h3>
+            <br/>
+            <p>This page is realized by Elziario Paduano. It is a personal project and is not meant to be used as a real application. It is implemented using Html, CSS, JavaScript and interacts with Google Book's API to retrieve data. If you want to read more about Google API Services User Data Policy <a href="https://developers.google.com/terms/api-services-user-data-policy">click here</a>.
+            </p>
+        </div>
+        <div id="footerRight">
+            <a href="https://www.linkedin.com/in/elziario-paduano/"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.github.com/elzpad"><i class="fa fa-github"></i></a>
+        </div>
     </div>
 
     <script>
@@ -70,7 +79,8 @@
             [
                 "NotSoGoodReads",
                 "Not a great web page...",
-                "...that you can use to search for great books"
+                "...that offers all your favourite books",
+                "NotSoGoodReads"
             ],
             tIndex: 0,
             cIndex: 0
@@ -83,7 +93,7 @@
     
             if (holder.cIndex === holder.text[holder.tIndex].length) {   
                 if (holder.tIndex === holder.text.length-1)
-                    await sleep(5000);
+                    clearInterval(interval);
                 else
                     await sleep(1000);
                 
