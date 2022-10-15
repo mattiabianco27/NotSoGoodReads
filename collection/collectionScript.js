@@ -26,12 +26,12 @@ function init() {
             </div>
             <div class="lowerBookContainer">
                 <div>
-                    <h5>Total pages</h5>
-                    <textarea  readonly>${info.numberOfPages}</textarea>
-                </div>
-                <div>
                     <h5>Current position</h5>
                     <textarea readonly>${info.progress}</textarea>
+                </div>
+                <div>
+                    <h5>Total pages</h5>
+                    <textarea  readonly>${info.numberOfPages}</textarea>
                 </div>
                 <button type="button" class="enEdit">Enable Editing</button>
                 <button type="button" class="updateInfo">Update</button>
@@ -44,7 +44,18 @@ function init() {
 
 init();
 collectionContainer.addEventListener('click', e => {
-    if (e.target.classList.contains('enEdit')) {
+    if (e.target.classList.contains('removeBook')) {
+        const id = e.target.parentElement.parentElement.parentElement.id;
+        const lastBook = localStorage.getItem(`book${collectionDimension-1}`);
+
+        localStorage.setItem(id, lastBook);
+        localStorage.removeItem(`book${collectionDimension-1}`);
+        localStorage.setItem('collectionDimension', collectionDimension-1);
+
+        document.querySelector(`#book${collectionDimension-1}`).id = id;
+
+        location.reload();
+    } else if (e.target.classList.contains('enEdit')) {
         const textAreas = e.target.parentElement.querySelectorAll('textarea');
 
         e.target.innerText = textAreas[0].hasAttribute('readonly')? "Disable Editing" : "Enable Editing";
@@ -54,9 +65,7 @@ collectionContainer.addEventListener('click', e => {
             else
                 textAreas[i].setAttribute('readonly', 'readonly');
         }
-    }
-
-    if (e.target.classList.contains('updateInfo')) {
+    } else if (e.target.classList.contains('updateInfo')) {
         const id = e.target.parentElement.parentElement.id;
         const textAreas = e.target.parentElement.querySelectorAll('textarea');
         let bookInfo = JSON.parse(localStorage.getItem(id));

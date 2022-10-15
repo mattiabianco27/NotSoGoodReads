@@ -72,16 +72,15 @@ button {
     padding: 1rem;
 }
 
+button:active {
+    transform: translateY(2px);
+}
+
 .removeBook {
     bottom: 0;
     position: relative;
     width: 300px;
 }
-
-.removeBook:active {
-    transform: translateY(2px);
-}
-
 
 .lowerBookContainer {
     align-items: center;
