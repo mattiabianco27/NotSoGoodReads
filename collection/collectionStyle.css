@@ -1,3 +1,47 @@
+#noBookFound {
+    background-color: rgb(20, 20, 20);
+    margin: auto;
+    padding: 3rem 0;
+    width: 100%;
+}
+
+#redirectAlert {
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 5rem 0;
+    width: 80%;
+}
+
+#redirectAlert img {
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px #542881;
+    transform: rotateY(15deg) rotateX(-10deg);
+    transform-style: preserve-3d;
+    width: 60%;
+}
+
+.infoContainer {
+    margin-left: 4%;
+    width: 30%;
+}
+
+.infoContainer p {
+    font-size: 1.2rem;
+}
+
+.infoContainer a {
+    color: rebeccapurple;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.infoContainer a:hover {
+    text-decoration: underline;
+}
+
 #mainContainer {
     align-items: center;
     background-color: white;

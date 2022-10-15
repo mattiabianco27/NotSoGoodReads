@@ -40,6 +40,11 @@ function init() {
 
         collectionContainer.appendChild(node);
     }
+
+    if (collectionDimension === 0) {
+        document.querySelector('#noBookFound').style.display = "block";
+        document.querySelector('#mainContainer').style.display = "none";
+    }
 }
 
 init();
@@ -71,8 +76,8 @@ collectionContainer.addEventListener('click', e => {
         let bookInfo = JSON.parse(localStorage.getItem(id));
         
         if (!isNaN(textAreas[0].value) && !isNaN(textAreas[1].value) && Number(textAreas[0].value) <= Number(textAreas[1].value)) {
-            bookInfo.numberOfPages = textAreas[0].value;
-            bookInfo.progress = textAreas[1].value;
+            bookInfo.progress = textAreas[0].value;
+            bookInfo.numberOfPages = textAreas[1].value;
     
             localStorage.setItem(id, JSON.stringify(bookInfo));
         } else {
